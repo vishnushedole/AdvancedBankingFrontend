@@ -1,0 +1,20 @@
+<div class="row">
+    <app-header [visibility]="visibility" (IconClick)="IconClick()"  [IconVisibility]="false"></app-header>
+</div>
+<div class="row mb-3">
+    <div class="col-12">
+        <h3 class="text-center fs-1">Manage Enquiries</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 border-end">
+        
+        <enq-list [enquiryList]="enquiryList" (select)="select($event)"  ></enq-list>
+    </div>
+    <div class="col-12">
+        <enq-details [EmployeeId]="EmployeeId" [selectedEnquiry]="selectedEnquiry" (deleteEnquiry)="deleteEnquiry($event)" ></enq-details>
+    </div>
+</div>
+<!-- <div>
+    <app-footer></app-footer>
+</div> -->

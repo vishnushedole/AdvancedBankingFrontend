@@ -1,0 +1,38 @@
+
+<div class="container">
+    <h2>Accounts Functions</h2>
+    <div class="row my-4">
+ 
+        <div class="col-sm-6">
+            <a class="btn btn-primary btn-lg" (click)="viewDetailsClick()">View Details</a>
+        </div> 
+        <div class="col-sm-6" >
+            <a class="btn btn-primary btn-lg" (click)="checkBalanceClick()">Check Balance</a>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-sm-6" (click)="fundTransferClick()">
+            <a class="btn btn-primary btn-lg">Fund Transfer</a>
+        </div> 
+        <div class="col-sm-6" (click)="accountStatementsClick()">
+            <a class="btn btn-primary btn-lg">Account Statements</a>
+        </div>
+    </div>
+    <div class="row my-4">
+ 
+        <div class="col-sm-6">
+            <a class="btn btn-primary btn-lg" (click)="addbeneficiaryClick()">Add Beneficiary </a>
+        </div>
+        <div class="col-sm-6" (click)="applyForCheckbookClick()">
+            <a class="btn btn-primary btn-lg">Apply for checkbook</a>
+        </div>
+    
+    </div>
+    <div class="row my-4 ">
+        <div class="col-sm-6">
+            <a class="btn btn-danger btn-lg" (click)="closeAccountClick()">Close Account</a>
+        </div>
+    </div>
+</div>
+
+

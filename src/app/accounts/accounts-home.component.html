@@ -1,0 +1,34 @@
+<div class="row">
+    <app-header [visibility]="visibility" (IconClick)="IconClick()" [CustId]="CustId" [IconVisibility]="IconVisibility" [UserName]="UserName"></app-header>
+</div>
+<div  class="row">
+    <div class="col-6">
+        <app-accounts-left 
+        [actionType]="actionType"
+        (clickViewDetails)="clickViewDetails()"
+        (clickApplyForCheckbook)="clickApplyForCheckbook()"
+        (clickFundTransfer)="clickFundTransfer()"
+        (clickAccountStatements)="clickAccountStatements()"
+        (clickCheckBalance)="clickCheckBalance()"
+        (clickAddbeneficiary)="clickAddbeneficiary()"
+        (clickCloseAccount)="clickCloseAccount()"
+        ></app-accounts-left>
+    </div>
+    <div class="col-6">
+        <app-accounts-right
+        [viewDetails]="viewDetails"
+        [actionType]="actionType"
+        [Transactions]="Transactions"
+    
+        [AccId]="AccId"
+        (closeAccount)="closeAccount()"
+        (ApplyForCheckbook)="ApplyForCheckbook()"
+        (Addbeneficiary)="Addbeneficiary($event)"
+        (FundTransfer)="FundTransfer($event)"
+        [BeneficiaryList]="BeneficiaryList"
+        ></app-accounts-right>
+    </div>
+</div>
+<!-- <div>
+    <app-footer></app-footer>
+</div> -->

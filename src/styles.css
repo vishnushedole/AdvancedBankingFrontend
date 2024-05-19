@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.heading{
+    font-size: 30px;
+    color:chocolate;
+    position: relative;
+    left:30%;
+    right:50%;
+}

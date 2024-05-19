@@ -1,0 +1,15 @@
+<div class="parent">
+    <div class="main">
+        <div class="login">
+            <form [formGroup]="enquiryForm" >
+                <label for="chk">Enquiry</label>
+                <input type="text" name="enquiryId" placeholder="Enquiry Id" required="" formControlName="enquiryId">
+             
+                <input type="email" name="Email" placeholder="Email Id" required=""  formControlName="Email">
+                <button (click)="ViewEnquiry(enquiryForm.get('enquiryId').value,enquiryForm.get('Email').value)">View Enquiry</button>
+                <button (click)="UpdateDetails(enquiryForm.get('enquiryId').value,enquiryForm.get('Email').value)">Update details</button>
+                
+            </form>
+        </div>
+    </div>
+</div>

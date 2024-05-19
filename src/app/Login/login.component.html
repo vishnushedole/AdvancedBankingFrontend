@@ -1,0 +1,22 @@
+<div class="parent">
+    <div class="main">
+        <div class="login">
+            <form [formGroup]="loginObj" (ngSubmit)="onLogin(loginObj.value)">
+                <label for="chk">Login</label>
+
+
+                <input type="email" name="username" formControlName="username" placeholder="Email or Username"
+                    required="">
+                <p *ngIf="loginObj.controls.username.errors?.required" style="color: red;">Email is required</p>
+
+                <input type="password" name="password" formControlName="password" placeholder="Password" required="">
+                <p *ngIf="loginObj.controls.password.errors?.required" style="color: red;">Password is
+                    required</p>
+
+
+                <button type="submit">Login</button>
+                <button [routerLink]="['/enquiry']">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>

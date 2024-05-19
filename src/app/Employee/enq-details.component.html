@@ -1,0 +1,160 @@
+<div class="card shadow p-4 m-auto m-2" *ngIf="selectedEnquiry">
+    <div class="card-header bg-dark text-center text-white">
+        <div class="fs-3 text-uppercase">Enquiry Details</div>
+    </div>
+
+    <div class="row g-3 mt-3">
+        <div class="col-md-4">
+            <label for="enquiryId">Enquiry ID</label>
+            <input type="text" class="form-control" name="enquiryId" [(ngModel)]="selectedEnquiry.enquiryId" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="selectedEnquiry.email" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="selectedEnquiry.firstName" [readonly]="selectedEnquiry" />
+        </div>
+    </div>
+
+    <div class="row g-3 mt-3">
+        <div class="col-md-4">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="selectedEnquiry.lastName" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="addr">Address</label>
+            <input type="text" class="form-control" name="addr" [(ngModel)]="selectedEnquiry.addr" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="panNo">PAN Number</label>
+            <input type="text" class="form-control" name="panNo" [(ngModel)]="selectedEnquiry.panNo" [readonly]="selectedEnquiry" />
+        </div>
+    </div>
+
+    <div class="row g-3 mt-3">
+        <div class="col-md-4">
+            <label for="aadhaarNo">Aadhaar Number</label>
+            <input type="text" class="form-control" name="aadhaarNo" [(ngModel)]="selectedEnquiry.aadhaarNo" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="phoneNo">Phone Number</label>
+            <input type="text" class="form-control" name="phoneNo" [(ngModel)]="selectedEnquiry.phoneNo" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" [(ngModel)]="selectedEnquiry.city" [readonly]="selectedEnquiry" />
+        </div>
+    </div>
+
+    <div class="row g-3 mt-3">
+        <div class="col-md-4">
+            <label for="stat">State</label>
+            <input type="text" class="form-control" name="stat" [(ngModel)]="selectedEnquiry.stat" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="country">Country</label>
+            <input type="text" class="form-control" name="country" [(ngModel)]="selectedEnquiry.country" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="pinCode">Pin Code</label>
+            <input type="text" class="form-control" name="pinCode" [(ngModel)]="selectedEnquiry.pinCode" [readonly]="selectedEnquiry" />
+        </div>
+    </div>
+
+    <div class="row g-3 mt-3">
+        <div class="col-md-4">
+            <label for="maritalStatus">Marital Status</label>
+            <input type="text" class="form-control" name="maritalStatus" [(ngModel)]="selectedEnquiry.maritalStatus" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="gender">Gender</label>
+            <input type="text" class="form-control" name="gender" [(ngModel)]="selectedEnquiry.gender" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" name="age" [(ngModel)]="selectedEnquiry.age" [readonly]="selectedEnquiry" />
+        </div>
+    </div>
+
+    <div class="row g-3 mt-3">
+        <div class="col-md-4">
+            <label for="guardianName">Guardian Name</label>
+            <input type="text" class="form-control" name="guardianName" [(ngModel)]="selectedEnquiry.guardianName" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="guardianAccount">Guardian Account</label>
+            <input type="text" class="form-control" name="guardianAccount" [(ngModel)]="selectedEnquiry.guardianAccount" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="guardianPhoneNo">Guardian Phone Number</label>
+            <input type="text" class="form-control" name="guardianPhoneNo" [(ngModel)]="selectedEnquiry.guardianPhoneNo" [readonly]="selectedEnquiry" />
+        </div>
+    </div>
+
+    <div class="row g-3 mt-3">
+        <div class="col-md-4">
+            <label for="guardianEmail">Guardian Email</label>
+            <input type="text" class="form-control" name="guardianEmail" [(ngModel)]="selectedEnquiry.guardianEmail" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="guardianAadhaar">Guardian Aadhaar Number</label>
+            <input type="text" class="form-control" name="guardianAadhaar" [(ngModel)]="selectedEnquiry.guardianAadhaar" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="isActive">Is Active</label>
+            <input type="number" class="form-control" name="isActive" [(ngModel)]="selectedEnquiry.isActive" [readonly]="selectedEnquiry" />
+        </div>
+    </div>
+
+    <div class="row g-3 mt-3">
+        <div class="col-md-4">
+            <label for="initialBalance">Initial Balance</label>
+            <input type="number" class="form-control" name="initialBalance" [(ngModel)]="selectedEnquiry.initialBalance" [readonly]="selectedEnquiry" />
+        </div>
+        <div class="col-md-4">
+            <label for="accType">Account Type</label>
+            <input type="number" class="form-control" name="accType" [(ngModel)]="selectedEnquiry.accType" [readonly]="selectedEnquiry" />
+        </div>
+    </div>
+
+    <div class="form-group mt-3 container">
+        <label>Documents</label>
+        <div class="row">  
+            <div *ngFor="let doc of selectedEnquiry.docs" class="col-md-4">
+            
+            <div>{{ doc.docType }}</div>
+        <img [src]="doc.docBase64" alt="Document Image" class="img-fluid" />
+        <div class="mt-2">
+           
+            <button class="btn btn-danger" (click)="rejectDocument(doc)">Reject</button>
+        </div>
+        
+    </div></div>
+      
+    </div>
+
+   
+</div>
+<div *ngIf="selectedEnquiry">
+<div class="d-flex justify-content-center mt-3">
+    <button class="btn btn-success me-2" (click)="acceptclick(selectedEnquiry,selectedEnquiry.email)">Accept</button>
+    <button class="btn btn-danger" (click)="confirmReject()">Reject</button>
+</div>
+
+<div *ngIf="showRejectionConfirmation" class="mt-3">
+    <div class="text-danger">Are you sure you want to reject this enquiry?</div>
+    <button class="btn btn-danger mt-2" (click)="deleteclick(selectedEnquiry,selectedEnquiry.email)">Yes</button>
+    <button class="btn btn-secondary mt-2" (click)="cancelReject()">No</button>
+</div>
+</div>
+<div *ngFor="let e of enquiryList">
+
+    <button class="btn btn-sm btn-success" (click)="acceptclick(selectedEnquiry,selectedEnquiry.enquiryId)">Accept</button>
+    <button class="btn btn-sm btn-danger" (click)="confirmReject()">Reject</button>
+
+
+</div>
+
+<app-loading-spinner [isLoading]="isLoading"></app-loading-spinner>

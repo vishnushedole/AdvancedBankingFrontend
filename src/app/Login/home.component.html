@@ -1,0 +1,22 @@
+<div class="row">
+    <app-header [visibility]="visibility" (IconClick)="IconClick()" [IconVisibility]="false"></app-header>
+</div>
+<div class="row bgclr">
+  
+    <div class="col-6" style="display: flex;justify-content: center;align-items: center;">
+      <app-carousel></app-carousel>
+      </div>
+          
+   
+    <div class=" col-6">
+        <div style="justify-content: center;align-items: center;display: flex;" >
+          <label style="color: aliceblue;">Login</label>
+          <input type="radio" name="togglebtn" value="Login" (click)="Toggle()" class="m-4 p-2">
+          <label style="color: aliceblue;">Enquirer</label>
+        <input type="radio" name="togglebtn" value="Enquiries" (click)="Toggle()" class="m-4 p-2">
+        </div>
+        <app-login *ngIf="selectedLogin"></app-login>
+        <app-right *ngIf="selectedEnquiry"></app-right>
+    </div>
+
+</div>

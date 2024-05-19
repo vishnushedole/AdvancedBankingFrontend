@@ -1,0 +1,21 @@
+<div>
+    
+        <h2>Accounts List</h2>
+    <table class="table table-success table-hover">
+        <thead >
+            <tr ><th>Sl.No</th><th>Account No</th><th>Account Type</th><th>View</th></tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of Accounts">
+                <td>1</td><td>{{item.accId}}</td><td>{{item.accountType=="1"?"Savings":"Current"}}</td>
+                <td>
+                    <a class="btn btn-sm btn-info" [routerLink]="['/account']" [queryParams]="{Id:item.accId,CustId:CustId,UserName:UserName}"
+                          >View</a>
+                          
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+    
+</div>

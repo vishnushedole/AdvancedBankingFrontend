@@ -1,0 +1,199 @@
+<div class="row">
+    <app-header [visibility]="visibility" (IconClick)="IconClick()" [CustId]="CustId" [IconVisibility]="IconVisibility"
+        [UserName]="CustName"></app-header>
+</div>
+<div class="container">
+
+    <div class=" text-center m-2">
+        <h2>Customer Details</h2>
+    </div>
+    <form [formGroup]="CustomerForm" (ngSubmit)="update(CustomerForm.value)">
+       
+            <input type="email" class="form-control" formControlName="EnquiryId" name="Email" hidden/>
+        
+        <div class="container">
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" formControlName="Email" name="Email" />
+                </div>
+                <div class="form-group col-4">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" formControlName="FirstName" name="FirstName" />
+
+                </div>
+
+                <div class="form-group col-4">
+                    <label for="firstName">Last Name</label>
+                    <input type="text" class="form-control" formControlName="LastName" name="LastName" />
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="Addr">Addr</label>
+                    <input type="text" class="form-control" formControlName="Addr" name="Addr" />
+                </div>
+                <div class="form-group col-4">
+                    <label for="PanNo">PanNo</label>
+                    <input type="text" class="form-control" formControlName="PanNo" name="PanNo" />
+
+                </div>
+                <div class="form-group col-4">
+                    <label for="AadhaarNo">AadhaarNo</label>
+                    <input type="text" class="form-control" formControlName="AadhaarNo" name="AadhaarNo" />
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="PhoneNo">Phone No</label>
+                    <input type="text" class="form-control" formControlName="PhoneNo" name="PhoneNo" />
+
+                </div>
+
+                <div class="form-group col-4">
+                    <label for="City">City</label>
+                    <input type="text" class="form-control" formControlName="City" name="City" />
+
+                </div>
+
+                <div class="form-group col-4">
+                    <label for="Stat">State</label>
+                    <input type="text" class="form-control" formControlName="Stat" name="Stat" />
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="PinCode">PinCode</label>
+                    <input type="text" class="form-control" formControlName="PinCode" name="PinCode" />
+
+                </div>
+
+                <div class="form-group col-4">
+                    <label for="MaritalStatus">MaritalStatus</label>
+                    <input type="text" class="form-control" formControlName="MaritalStatus" name="MaritalStatus" />
+
+                </div>
+
+                <div class="form-group col-4">
+                    <label for="Gender">Gender</label>
+                    <input type="text" class="form-control" formControlName="Gender" name="Gender" />
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="Age">Age</label>
+                    <input type="text" class="form-control" formControlName="Age" name="Age" />
+
+                </div>
+
+                <div class="form-group col-4" *ngIf="CustomerForm.value.Age<=18">
+                    <label for="GuardianName">GuardianName</label>
+                    <input type="text" class="form-control" formControlName="GuardianName" name="GuardianName" />
+
+                </div>
+
+                <div class="form-group col-4" *ngIf="CustomerForm.value.Age<=18">
+                    <label for="GuardianAccount">GuardianAccount</label>
+                    <input type="text" class="form-control" formControlName="GuardianAccount" name="GuardianAccount" />
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="form-group col-4" *ngIf="CustomerForm.value.Age<=18">
+                    <label for="GuardianPhoneNo">GuardianPhoneNo</label>
+                    <input type="text" class="form-control" formControlName="GuardianPhoneNo" name="GuardianPhoneNo" />
+
+                </div>
+
+                <div class="form-group col-4" *ngIf="CustomerForm.value.Age<=18">
+                    <label for="GuardianEmail">GuardianEmail</label>
+                    <input type="text" class="form-control" formControlName="GuardianEmail" name="GuardianEmail" />
+
+                </div>
+
+                <div class="form-group col-4" *ngIf="CustomerForm.value.Age<=18">
+                    <label for="GuardianAadhaar">GuardianAadhaar</label>
+                    <input type="text" class="form-control" formControlName="GuardianAadhaar" name="GuardianAadhaar" />
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <!-- <div class="form-group col-4">
+                    <label for="isActive">isActive</label>
+                    <input type="text" class="form-control" formControlName="isActive" name="isActive" />
+
+                </div> -->
+
+                <div class="form-group col-4">
+                    <label for="InitialBalance">InitialBalance</label>
+                    <input type="text" class="form-control" formControlName="InitialBalance" name="InitialBalance" />
+
+                </div>
+
+                <div class="form-group col-4">
+                    <label for="AccountType">AccountType</label>
+                    <input type="text" class="form-control" formControlName="AccountType" name="AccountType" />
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="form-group text-center col-4 mx-auto mt-3">
+
+                    <button type="submit" class="btn btn-success ">
+                        Update
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+<div class="mx-auto p-2">
+    <div class="text-center mt-4 mb-4 ">
+        <h2>Associated Documents</h2>
+    </div>
+
+    <div class="container ">
+        <div class="row">
+            <div *ngFor="let document of documents" class="col-4 border border-secondary p-2">
+                <p><strong>Document ID:</strong> {{document.docModel.docId}}</p>
+                <p><strong>Enquiry ID:</strong> {{document.docModel.enqId}}</p>
+                <p><strong>Customer ID:</strong> {{document.docModel.custId}}</p>
+                <p><strong>Document Type:</strong> {{document.docModel.docType}}</p>
+                <p><strong>Is Approved:</strong> {{document.docModel.isApproved}}</p>
+                <!-- Add more fields as needed -->
+                <img *ngIf="document.imageData" [src]="document.imageData" alt="Document Image" height="200vh">
+                <div class="form-group">
+                    <label for="DocFile">Upload New Document</label>
+                    <input type="file" id="DocFile" formControlName="DocFile" class="form-control-file"
+                        (change)="onFileChange($event,document.docModel.docId,document.docModel.enqId,document.docModel.custId,document.docModel.docType,document.docModel.isApproved)">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

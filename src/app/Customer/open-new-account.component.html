@@ -1,0 +1,43 @@
+<div class="container b-2">
+     
+         <h2>Open New Account</h2>
+         <form [formGroup]="formdata" (ngSubmit)="Create(formdata.value)">
+            <div class="form-group">
+                <label for="unitPrice">Account Type</label>
+                <select class="form-control" name="Account Type" formControlName="AccType" >
+                    <option value="" disabled selected>Select Account Type</option>
+                    <option value="1">Savings</option>
+                    <option value="2">Current</option>
+                  </select>
+                  
+               
+            </div>
+            <div class="form-group">
+                <label for="unitPrice">Branch</label>
+                <select class="form-control" name="Account Type" formControlName="BranchId">
+                    <option value="" disabled selected>Select Branch</option>
+                    <option  *ngFor="let branch of formdata.BranchNames; let i = index;" value="{{i+1}}">{{branch}}</option>
+                   
+                   
+                  </select>
+                
+            </div>
+            <div class="form-group">
+                <label for="unitsInStock">Initial Balance</label>
+                <span matPrefix>&nbsp;&nbsp;₹&nbsp;</span>
+                <input type="text" class="form-control" formControlName="InitialBalance" placeholder="Initial Balance"
+                    name="InitialBalance"
+                    />
+            </div>
+           
+            <div class="form-group text-center">
+               
+                <button type="submit"
+                    class="btn btn-success">
+                    Create
+                </button>
+            </div>
+        </form>
+    
+</div>
+

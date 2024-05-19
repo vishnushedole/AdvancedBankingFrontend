@@ -1,0 +1,27 @@
+.nav-header{
+    color: aliceblue;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    display: flex;
+    padding: 1%;
+}
+.Title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 45%;
+}
+.Icon{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 20%;
+    margin-left: 45%;
+
+}
+.dropdown{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    row-gap: 5px;
+    padding: 1%;
+    background-color: rgb(244, 151, 151);
+    color: wheat;
+    left:85%;
+    top:100%;
+}

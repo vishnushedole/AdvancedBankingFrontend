@@ -1,0 +1,265 @@
+<div class="card text-center">
+    <div *ngIf="actionType=='viewDetails'">
+        <h2 class="card-header">
+            View Details
+        </h2>
+          <!-- case 1 -->
+          <div  class="card-body">
+              <form id="form" >
+                  <div class="form-group">
+                      <label for="AccId">Account Number</label>
+                      <input type="number" class="form-control"
+                          name="AccId"   
+                          id="AccId"
+                          disabled
+                          value="{{viewDetails.accountId}}"
+                    />
+                  </div>
+              
+                  <div class="form-group">
+                      <label for="CustId">Customer Id</label>
+                      <input type="number" class="form-control"
+                          name="CustId"
+                          disabled
+                          value="{{viewDetails.customerId}}"
+                          id="CustId"
+                    />
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="BranchId">Branch Id</label>
+                      <input type="number" class="form-control"
+                          name="BranchId"
+                          disabled
+                          id="BranchId"
+                          value="{{viewDetails.branchId}}"
+                    />
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="NoOfFreeWithdrawal"> No Of Free Withdrawal</label>
+                      <input type="number" class="form-control"
+                          name="NoOfFreeWithdrawl"
+                          disabled
+                          id="NoOfFreeWithdrawl"
+                          value="{{viewDetails.noOfFreeWithdrawl<0?'No Limit':viewDetails.noOfFreeWithdrawl}}"
+                    />
+                  </div>
+      
+                  <div class="form-group">
+                      <label for="NoOfFreeDeposit"> No Of Free Deposit</label>
+                      <input type="number" class="form-control"
+                          name="NoOfFreeDeposit"
+                          disabled
+                          id="NoOfFreeDeposit"
+                          value="{{viewDetails.noOfFreeDeposit}}"
+                    />
+                  </div>
+      
+                  <div class="form-group">
+                      <label for="IsCheckBook"> Checkbook</label>
+                      <input type="text" class="form-control"
+                          name="IsCheckBook"
+                          disabled
+                          id="IsCheckBook"
+                          value="{{viewDetails.isCheckBook==0?'No':'Yes'}}"
+                    />
+                  </div>
+      
+                  <div class="form-group">
+                      <label for="AccountType">AccountType</label>
+                      <input type="text" class="form-control"
+                          name="AccountType"
+                          disabled
+                          id="AccountType"
+                          value="{{viewDetails.accountType==1?'Savings':'Current'}}"
+                    />
+                  </div>
+      
+                  <div class="form-group">
+                      <label for="balance">balance</label>
+                      <input type="number" class="form-control"
+                          name="balance"
+                          disabled
+                          id="balance"
+                          value="{{viewDetails.balance}}"
+                    />
+                  </div>
+                 
+              </form>
+          </div>    
+    </div>
+
+    <div *ngIf="actionType=='checkBalance'">
+        <h2 class="card-header">
+            Check Balance
+          </h2>
+          <!-- case 2 -->
+          <div  class="card-body">
+            <form>
+               
+                <div class="form-group row">
+                  <label for="AccId" class="col-sm-2 col-form-label col-form-label-lg">Account Number</label>
+                  <div class="col-sm-10">
+                    <input type="text"
+                    disabled
+                    value="{{AccId}}"
+                     class="form-control form-control-lg" id="colFormLabelLg">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="balance" class="col-sm-2 col-form-label col-form-label-lg">Balance</label>
+                  <div class="col-sm-10">
+                    <input type="text" 
+                    disabled
+                    value="{{viewDetails.balance}}"
+                    class="form-control form-control-lg" id="colFormLabelLg">
+                  </div>
+                </div>
+              </form>
+          </div>    
+    </div>
+
+    <div *ngIf="actionType=='fundTransfer'">
+        <h2 class="card-header">
+            Fund Transfer
+          </h2>
+          <!-- case 3 -->
+          <div  class="card-body">
+            <form [formGroup]="FundTransferForm" (ngSubmit)="fundTransferClick()">
+                <div class="form-group row">
+                    <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Account Number</label>
+                    <div class="col-sm-10">
+                      <input type="text"
+                      disabled
+                      value="{{AccId}}"
+                   
+                    
+                       class="form-control form-control-lg" id="colFormLabelLg">
+                    </div>
+                  </div>
+                <div class="form-group row">
+                    <label for="BeneficiaryId">Beneficiary ID</label>
+                    <select  formControlName="BeneficiaryId" name="BeneficiaryId" >
+                       <option *ngFor="let option of BeneficiaryList" [value]="option">{{ option}}</option>
+                    </select>
+                </div>
+                <br/>
+                <div class="form-group row">
+                    <label for="Amount" class="col-sm-2 col-form-label col-form-label-lg">Amount</label>
+                    <div class="col-sm-10">
+                      <input type="text"
+                      formControlName="Amount" name="Amount"
+                       class="form-control form-control-lg" id="colFormLabelLg">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-success" >
+                    Fund Transfer
+                 </button>
+            </form>
+           
+          </div>    
+    </div>
+
+    <div *ngIf="actionType=='accountStatements'">
+        <h2 class="card-header">
+            Bank Statement
+          </h2>
+          <!-- case 4 -->
+          <div  class="card-body">
+            <table class="table table-success table-hover" id="tableToExport">
+                <thead >
+                    <tr ><th>Sl.No</th><th>Transaction No</th><th>Source Id</th><th>Destination Id</th><th>Amount</th><th>Type</th></tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of Transactions">
+                      
+                        <td>1</td><td>{{item.transactionId}}</td><td>{{item.sourceTransactionId}}</td>
+                        <td>
+                           {{item.destinationTransactionId}}
+                        </td>
+                        <td>
+                            {{item.amount}}
+                         </td>
+                         <td *ngIf="item.sourceTransactionId==AccId">Debit</td>
+                         <td *ngIf="item.destinationTransactionId==AccId">Credit</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>    
+          <button class="btn btn-success" (click)="generatePdf()">Download</button>
+    
+    </div>
+
+    <div *ngIf="actionType=='addBeneficiary'">
+        <h2 class="card-header">
+            Add Beneficiary
+          </h2>
+          <!-- case 3 -->
+          <div  class="card-body">
+            <form [formGroup]="BeneficiaryForm" (ngSubmit)="addBeneficiaryClick(BeneficiaryForm.value)">
+                <div class="form-group">
+                    <label for="BeneficiaryId">Beneficiary ID</label>
+                    <br/>
+                    <input type="text" class="form-control" formControlName="BeneficiaryId" name="BeneficiaryId" />
+                </div>
+               <div class="form-group text-center">
+               <br/>
+               <button type="submit" class="btn btn-success" >
+                  Add
+               </button>
+              </div>
+            </form>
+
+    
+          </div>
+    </div>
+
+    <div *ngIf="actionType=='applyForCheckbook'">
+        <h2 class="card-header">
+            Apply For Checkbook
+          </h2>
+          <!-- case 6 -->
+          <div  class="card-body">
+            <form [formGroup]="CheckBookForm" (ngSubmit)="ApplyForCheckBook()">
+                <div class="form-group row">
+                    <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Account Number</label>
+                    <div class="col-sm-10">
+                      <input type="text"
+                      disabled
+                      value="{{AccId}}"
+                   
+                    
+                       class="form-control form-control-lg" id="colFormLabelLg">
+                    </div>
+                  </div>
+               
+                <br/>
+                
+                  <button type="submit" class="btn btn-success" >
+                    Apply
+                 </button>
+            </form>
+          </div>    
+    </div>
+
+    <div *ngIf="actionType=='closeAccount'">
+        <h2 class="card-header">
+            Close Account
+          </h2>
+          <!-- case 7-->
+          <div  class="card-body">
+            <div  class="d-inline">
+                <span class="text-danger">Are you sure you want to Delete this Account?</span>
+                <br/>
+                <button  type="submit" (click)="closeAccountFn()"
+                    class="btn btn-sm btn-outline-danger mx-2"> Yes </button>
+                
+            </div>
+          </div>    
+    </div>
+
+ 
+ 
+  
+</div>
